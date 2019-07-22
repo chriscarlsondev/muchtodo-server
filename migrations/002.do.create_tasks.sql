@@ -4,5 +4,5 @@ CREATE TABLE tasks (
   taskstatus VARCHAR(1) DEFAULT 'I',
   taskduedate DATE,
   taskcategory INTEGER REFERENCES categories(id)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
 );
