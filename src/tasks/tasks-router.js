@@ -24,15 +24,6 @@ tasksRouter
     const { taskname, taskduedate, taskcategory, taskstatus } = req.body
     const newTask = { taskname, taskduedate, taskcategory, taskstatus }
 
-    for (const [key, value] of Object.entries(newTask)) {
-      if (value == null) {
-        logger.error(`New task submission did not include all required fields`);
-        return res.status(400).json({
-          error: { message: `Missing '${key}' in request body` }
-        })
-      }
-    }
-
     if (newTask.taskname.length === 0) {
       logger.error(`Task name must be greater than zero`);
       return res.status(400).json({
@@ -40,11 +31,19 @@ tasksRouter
       })
     }
 
-    if (newTask.taskstatus != 'I'  && newTask.taskstatus != 'C') {
+    if (newTask.taskstatus !== 'I'  && newTask.taskstatus !== 'C') {
       logger.error(`Task status must be I or C`);
       return res.status(400).json({
         error: { message: `Invalid task status submitted` }
       })
+    }
+
+    if (newTask.taskcategory === '') {
+      newTask.taskcategory = null;
+    }
+
+    if (newTask.taskduedate === '') {
+      newTask.taskduedate = null;
     }
 
     TasksService.insertTask(
