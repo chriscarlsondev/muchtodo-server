@@ -11,6 +11,13 @@ const TasksService = {
                 return rows[0]
             })
     },
+    updateTask(knex, id) {
+        return knex('tasks')
+            .where( 'id', id )
+            .update({
+                'taskstatus': 'C'
+            })
+    },
 }
 
 module.exports = TasksService

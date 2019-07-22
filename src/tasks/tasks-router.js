@@ -5,7 +5,6 @@ const logger = require('../logger')
 const TasksService = require('./tasks-service')
 const xss = require('xss')
 const path = require('path')
-const jsonParser = express.json()
 
 const tasksRouter = express.Router()
 
@@ -57,6 +56,20 @@ tasksRouter
         .status(201)
         .location(path.posix.join(req.originalUrl, `/${task.id}`))
         .json(task)
+    })
+    .catch(next)
+  })
+
+  tasksRouter
+  .route('/:id')
+  .patch(bodyParser, (req, res, next) => {
+    const taskToUpdate = req.params.id;
+    TasksService.updateTask(
+      req.app.get('db'),
+      taskToUpdate
+    )
+    .then(numRowsAffected => {
+    res.status(204).end()
     })
     .catch(next)
   })
