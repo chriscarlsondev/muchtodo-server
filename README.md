@@ -1,26 +1,32 @@
-# Express Boilerplate!
+# MuchToDo - Back-End Server
+An app that makes create and using your to do list easy. This means you can spend less time tracking your to do's and more time getting them done.
 
-This is a boilerplate project used for starting new projects!
+## Built With
 
-## Set up
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+### Back-End Technologies
+* Node
+* Express
+* PostgreSQL
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+## Features
+* Simple page for adding tasks
+* Ability to group your tasks into categories
+* Ability to assign a due date for tasks
 
-## Scripts
+## Demo
 
-Start the application `npm start`
+- [Live Demo](https://muchtodo-client.now.sh/)
 
-Start nodemon for the application `npm run dev`
+## Screenshots
 
-Run the tests `npm test`
+![homepage-screenshot](https://user-images.githubusercontent.com/49646269/61745032-32be4a80-ad88-11e9-9995-14f3eef6db2b.png)
 
-## Deploying
+## Authors
+* **Chris Carlson**** - Front-end and backe-end development, testing and styling
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+
+
+
+
+
