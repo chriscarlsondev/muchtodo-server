@@ -23,7 +23,7 @@ An app that makes create and using your to do list easy. This means you can spen
 ![homepage-screenshot](https://user-images.githubusercontent.com/49646269/61745032-32be4a80-ad88-11e9-9995-14f3eef6db2b.png)
 
 ## Authors
-* **Chris Carlson** - ** - Front-end and backe-end development, testing and styling
+* **Chris Carlson**** - Front-end and backe-end development, testing and styling
 
 
 
