@@ -11,6 +11,8 @@ const express = require('express');
 
 app = express()
 
+app.use('/static', express.static('public'))
+
 app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
     skip: () => NODE_ENV === 'test',
 }))
