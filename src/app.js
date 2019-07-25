@@ -1,5 +1,4 @@
 require('dotenv').config()
-const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
@@ -8,8 +7,9 @@ const winston = require('winston');
 const tasksRouter = require('./tasks/tasks-router')
 const categoriesRouter = require('./categories/categories-router')
 const logger = require('./logger')
+const express = require('express');
 
-const app = express()
+app = express()
 
 app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
     skip: () => NODE_ENV === 'test',
